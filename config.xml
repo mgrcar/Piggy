@@ -33,6 +33,11 @@
     <preference name="detect-data-types" value="false" />
     <!-- If set to true, app will terminate when suspended, for example when home button is pressed; default is false. -->
     <preference name="exit-on-suspend" value="false" />
+
+    <gap:config-file platform="ios" parent="UIApplicationExitsOnSuspend" overwrite="true">
+        <false />
+    </gap:config-file>
+
     <!-- This sets the IPHONEOS_DEPLOYMENT_TARGET in the build, which tranlsates to the MinimumOSVersion in the ipa Propertly List. -->
     <preference name="deployment-target" value="5.0" />
 
