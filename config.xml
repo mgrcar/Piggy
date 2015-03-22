@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-    <widget xmlns   = "http://www.w3.org/ns/widgets"
-        xmlns:gap   = "http://phonegap.com/ns/1.0"
-        id          = "com.basementbinery.piggy"
-        versionCode = "10"
-        version     = "1.0.0" >
+    <widget xmlns = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.basementbinery.piggy"
+        version   = "0.0.1">
 
     <name>Piggy</name>
 
@@ -36,5 +35,12 @@
     <preference name="exit-on-suspend" value="false" />
     <!-- This sets the IPHONEOS_DEPLOYMENT_TARGET in the build, which tranlsates to the MinimumOSVersion in the ipa Propertly List. -->
     <preference name="deployment-target" value="5.0" />
+
+    <gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance" overwrite="true">
+        <false />
+    </gap:config-file>
+    <gap:config-file platform="ios" parent="UIStatusBarHidden" overwrite="true">
+        <true />
+    </gap:config-file>
 
 </widget>
