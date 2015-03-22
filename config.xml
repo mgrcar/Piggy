@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "com.basementbinery.piggy"
+        versionCode = "10"
+        version     = "1.0.0" >
+
+    <name>Piggy</name>
+
+    <description>
+        My Phaser &amp; PhoneGap test
+    </description>
+
+    <author href="http://www.basementbinery.com" email="contact@basementbinery.com">
+        mIHA
+    </author>
+
+    <!-- Multi-Platform -->
+
+    <!-- Currently supported versions are 3.0.0, 3.0.0, 3.1.0, 3.2.0, 3.3.0, 3.4.0, 3.5.0, 3.6.3 (default), and 3.7.0 - all versions prior to 3.0.0 are deprecated as of October 15, 2014. If you don't specify a version in your config, it will be set to the current default version. Your app will not build if you specify an unsupported version number. -->
+    <preference name="phonegap-version" value="3.7.0" />
+    <!-- Device orientation; possible values are default, landscape, or portrait. Please note that default means both landscape and portrait are enabled. If you want to use each platform's default settings (usually portrait only), remove this tag from your config.xml file. -->
+    <preference name="orientation" value="portrait" />
+    <!-- Makes your app full screen, with values true or false. This hides the status bar at the top, and is false by default. Note: may not be supported by newer versions of iOS, but users can use the config-file element on phonegap build, and set UIViewControllerBasedStatusBarAppearance to false and UIStatusBarHidden to true. -->
+    <preference name="fullscreen" value="true" />
+
+    <!-- iOS Only -->
+
+    <!-- For targeting a specific device; possible values are handset, tablet, or universal. Note that this currently only applies to iOS builds; by default all builds are universal. -->
+    <preference name="target-device" value="universal" />
+    <!-- This will cause iOS to not apply its gloss to the app's icon on the user's home screen; possible values are true or false, default is false. -->
+    <preference name="prerendered-icon" value="true" />
+    <!-- Controls whether certain data types (such as phone numbers and dates) are automatically turned into links by the system. Defaults to "true" (as does the system web view). In preference to this, try using meta-tags: And use detect-data-types if meta tags don't work for you. -->
+    <preference name="detect-data-types" value="false" />
+    <!-- If set to true, app will terminate when suspended, for example when home button is pressed; default is false. -->
+    <preference name="exit-on-suspend" value="false" />
+    <!-- This sets the IPHONEOS_DEPLOYMENT_TARGET in the build, which tranlsates to the MinimumOSVersion in the ipa Propertly List. -->
+    <preference name="deployment-target" value="5.0" />
+
+</widget>
