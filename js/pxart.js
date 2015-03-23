@@ -66,6 +66,8 @@ function init(canvasW, canvasH, bkgrW, bkgrH, container) {
     var containerObj = document.getElementById(container);
     containerObj.style.transformOrigin = "0 0";
     containerObj.style.transform = "scale(" + (1 / window.devicePixelRatio) + ")";
+    containerObj.style["-webkit-transform-origin"] = "0 0";
+    containerObj.style["-webkit-transform"] = "scale(" + (1 / window.devicePixelRatio) + ")";
     var s1 = Math.floor(cw / bw);
     var s2 = Math.ceil(cw / bw);
 	s = Math.abs(s1 * bw - cw) > Math.abs(s2 * bw - cw) ? s2 : s1;
