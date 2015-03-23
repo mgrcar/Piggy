@@ -59,15 +59,17 @@ function getCharOffset(char, fontData) {
 
 // Init
 
-function init(canvasW, canvasH, bkgrW, bkgrH, container) {
-	cw = canvasW; ch = canvasH;
-	bw = bkgrW;   bh = bkgrH;
+function init(canvasWidth, canvasHeight, inflateFactor, bkgrWidth, bkgrHeight, container) {
+	cw = canvasWidth  * inflateFactor; 
+    ch = canvasHeight * inflateFactor;
+	bw = bkgrWidth;
+    bh = bkgrHeight;
 	game = new Phaser.Game(cw, ch, Phaser.AUTO, container);
     var containerObj = document.getElementById(container);
     containerObj.style.transformOrigin = "0 0";
-    containerObj.style.transform = "scale(" + (1 / window.devicePixelRatio) + ")";
+    containerObj.style.transform = "scale(" + (1 / (window.devicePixelRatio * inflateFactor)) + ")";
     containerObj.style["-webkit-transform-origin"] = "0 0";
-    containerObj.style["-webkit-transform"] = "scale(" + (1 / window.devicePixelRatio) + ")";
+    containerObj.style["-webkit-transform"] = "scale(" + (1 / (window.devicePixelRatio * inflateFactor)) + ")";
     var s1 = Math.floor(cw / bw);
     var s2 = Math.ceil(cw / bw);
 	s = Math.abs(s1 * bw - cw) > Math.abs(s2 * bw - cw) ? s2 : s1;
