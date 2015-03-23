@@ -81,7 +81,6 @@
                         var sprite = flakes.create(Math.random() * cw, Math.random() * ch, Math.round(Math.random()) == 0 ? flake1 : flake2); 
                         sprite.$angle = Math.random() * angleRange + 1.5708 - angleRange / 2;
                         sprite.$inc = Math.random() * scale(0.2) + scale(0.2); 
-                        //sprite.alpha = Math.random() * 0.1 + 0.9;
                     }
                 },
                 update: function() {
@@ -106,11 +105,11 @@
             window.onload = function () { 
 
                 init(
-                    320 * 1.5,  // canvas width
-                    480 * 1.5,  // canvas height
-                    160,        // background width
-                    240,        // background height
-                    "canvas"    // container
+                    640,     // canvas width
+                    1136,    // canvas height
+                    160,     // background width
+                    240,     // background height
+                    "canvas" // container
                 ); 
 
                 game.state.add("boot", boot);

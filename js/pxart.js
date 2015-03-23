@@ -8,7 +8,7 @@ var s;
 // Utils
 
 function scale(x) {
-    return x * s; 
+    return x * s;
 }
 
 function isNumber(n) {
@@ -63,6 +63,9 @@ function init(canvasW, canvasH, bkgrW, bkgrH, container) {
 	cw = canvasW; ch = canvasH;
 	bw = bkgrW;   bh = bkgrH;
 	game = new Phaser.Game(cw, ch, Phaser.AUTO, container);
+    var containerObj = document.getElementById(container);
+    containerObj.style.transformOrigin = "0 0";
+    containerObj.style.transform = "scale(" + (1 / window.devicePixelRatio) + ")";
     var s1 = Math.floor(cw / bw);
     var s2 = Math.ceil(cw / bw);
 	s = Math.abs(s1 * bw - cw) > Math.abs(s2 * bw - cw) ? s2 : s1;
