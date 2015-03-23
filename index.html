@@ -78,9 +78,13 @@
                     var flake2 = addImage("flake2");
 
                     for (var i = 0; i < numFlakes; i++) {
-                        var sprite = flakes.create(Math.random() * cw, Math.random() * ch, Math.round(Math.random()) == 0 ? flake1 : flake2); 
+                        var x = Math.random() * cw;
+                        var y = Math.random() * ch;
+                        var sprite = flakes.create(Math.round(x), Math.round(y), Math.round(Math.random()) == 0 ? flake1 : flake2); 
                         sprite.$angle = Math.random() * angleRange + 1.5708 - angleRange / 2;
                         sprite.$inc = Math.random() * scale(0.2) + scale(0.2); 
+                        sprite.$x = x;
+                        sprite.$y = y;
                     }
                 },
                 update: function() {
@@ -89,13 +93,16 @@
                     // flakes
                     for (i = 0; i < flakes.children.length; i++) {
                         flake = flakes.children[i];
-                        flake.x = flake.x + flake.$inc * Math.cos(flake.$angle);
-                        flake.y = flake.y + flake.$inc * Math.sin(flake.$angle);
+                        flake.$x = flake.$x + flake.$inc * Math.cos(flake.$angle);
+                        flake.$y = flake.$y + flake.$inc * Math.sin(flake.$angle);
+                        flake.x = Math.round(flake.$x);
+                        flake.y = Math.round(flake.$y);
                         flake.$angle += (Math.random() * 2 - 1) * angleChange;
                         flake.$angle = Math.max(angleMin, Math.min(angleMax, flake.$angle));
                         if (flake.y > ch + scale(5)) { 
-                            flake.y = -scale(5);
-                            flake.x = Math.round(Math.random() * cw);
+                            flake.y = flake.$y = -scale(5);
+                            flake.$x = Math.random() * cw;
+                            flake.x = Math.round(flake.$x);
                             flake.$angle = Math.random() * angleRange + 1.5708 - angleRange / 2;
                         }
                     }
